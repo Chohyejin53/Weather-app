@@ -75,10 +75,8 @@ function App() {
     if (city === null) {
       setLoading(true);
       getCurrentLocation();
-      getCurrentLocation();
     } else {
       setLoading(true);
-      getCurrentLocation();
       getWeatherByCity();
     }
   }, [city]);
