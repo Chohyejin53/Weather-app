@@ -314,10 +314,11 @@ body {
     }
   }
   .weather-box {
+    position: relative;
     .weather-icon {
-      top: 120px;
-      right: 10px;
-      width: 200px;
+      top: 70px;
+      right: 0;
+      width: 58%;
     }
   }
 }
