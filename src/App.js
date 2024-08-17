@@ -60,10 +60,9 @@ function App() {
       setLoading(false);
     }
   };
-  const [selectedCity, setSelectedCity] = useState("current");
+
   const handleCityChange = (city) => {
     if (city === "current") {
-      setSelectedCity(city);
       setCity(null);
     } else {
       setCity(city);
