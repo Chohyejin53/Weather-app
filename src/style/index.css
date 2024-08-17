@@ -158,11 +158,22 @@ body .loading-container .loading-bar {
   top: 0;
   right: 0;
   width: 360px;
+  animation: move 2s forwards ease-out;
 }
 .weather-box .weather-icon img {
   width: 100%;
 }
 
+@keyframes move {
+  0% {
+    opacity: 0;
+    transform: translate(50px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
 .mini-game {
   display: flex;
   flex-direction: column;
