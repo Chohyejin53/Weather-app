@@ -20,7 +20,7 @@ const WeatherBox = ({ weather }) => {
   const iconName =
     weather && weather.weather.length > 0 ? weather.weather[0].icon : "";
 
-  const weatherIcon = `icon_${iconName}`;
+  // const weatherIcon = `icon_${iconName}`;
   return (
     <div className="weather-box">
       <div className="current-temp">
