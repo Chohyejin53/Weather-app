@@ -3,7 +3,7 @@ import DateBox from "./component/DateBox";
 import WeatherBox from "./component/WeatherBox";
 import WeatherButton from "./component/WeatherButton";
 import MiniGame from "./component/MiniGame";
-import ClipLoader from "react-spinners/ClipLoader";
+// import ClipLoader from "react-spinners/ClipLoader";
 
 import "./style/reset.css";
 import "./style/index.css";
@@ -86,14 +86,14 @@ function App() {
       <div>
         {loading ? (
           <div className="loading-container">
-            <ClipLoader
+            {/* <ClipLoader
               color="#fff"
               loading={loading}
               className="loading-bar"
               size={150}
               aria-label="Loading Spinner"
               data-testid="loader"
-            />
+            /> */}
           </div>
         ) : !apiError ? (
           <div className="wrapper">
