@@ -1,0 +1,311 @@
+/* 공통 */
+
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Jua&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  position: relative;
+  background-color: #f87c56;
+  font-family: "Concert One", "Jua", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  .loading-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    .loading-bar {
+      display: block;
+    }
+  }
+}
+.wrapper {
+  position: relative;
+  width: 100%;
+  min-width: 320px;
+  max-width: 750px;
+  padding: 35px 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+  color: #fff2dc;
+  line-height: 1.2;
+
+  .inner {
+    width: 375px;
+    padding: 0 28px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+}
+
+/* header */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .inner {
+    padding: 0 0 20px;
+    box-sizing: border-box;
+  }
+}
+.date-box {
+  font-weight: bold;
+  font-size: 26px;
+  text-align: center;
+}
+
+/* container */
+.container {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.button-box {
+  .button-title {
+    display: block;
+    font-size: 26px;
+  }
+
+  .button-area {
+    display: flex;
+    width: 80px;
+    margin-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn_dot {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    background-color: #fff2dc;
+    border: none;
+    cursor: pointer;
+    opacity: 0.25;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+.weather-box {
+  .current-temp {
+    display: inline-block;
+    padding: 20px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fff2dc;
+    .tempC {
+      position: relative;
+      padding-right: 40px;
+      font-weight: bold;
+      font-size: 130px;
+      &::after {
+        content: "⁰C";
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 50px;
+      }
+    }
+    .tempF {
+      opacity: 0.6;
+      display: inline-block;
+      position: relative;
+      padding-right: 12px;
+      font-size: 18px;
+
+      &::after {
+        content: "⁰F";
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .description {
+    display: block;
+    max-width: 180px;
+
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .info {
+    display: block;
+    padding-top: 32px;
+
+    .max-min {
+      display: flex;
+      width: 180px;
+      justify-content: space-between;
+
+      p {
+        display: inline-block;
+        font-size: 0;
+
+        .des-title {
+          vertical-align: bottom;
+          opacity: 0.6;
+          font-size: 14px;
+        }
+        .des-temp {
+          margin-left: 5px;
+          vertical-align: bottom;
+          font-size: 20px;
+        }
+      }
+    }
+
+    .info-text {
+      font-size: 26px;
+    }
+  }
+
+  .weather-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 360px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.mini-game {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto 0;
+  padding: 20px 0;
+  border-top: 1px solid #fff2dc;
+  border-bottom: 1px solid #fff2dc;
+  box-sizing: border-box;
+
+  .sub-title {
+    font-size: 14px;
+    text-align: center;
+  }
+  .title {
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+  }
+  .container {
+    display: flex;
+    justify-content: space-around;
+    margin: 14px auto 0;
+    box-sizing: border-box;
+  }
+
+  .box {
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    text-align: center;
+    background: radial-gradient(circle, rgb(235, 97, 37) 0%, #f87c56 70%);
+
+    & + .box {
+      .img-area {
+        transform: scaleX(-1);
+      }
+    }
+    .title {
+      display: inline-block;
+      padding: 0 5px;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 14px;
+      background-color: #d34a0f;
+    }
+
+    .img-area {
+      width: 158px;
+      height: 144px;
+      display: block;
+      margin: 0 auto;
+      img {
+        width: 100%;
+      }
+    }
+
+    &.color-black {
+      .result-text {
+        color: #000;
+      }
+    }
+    &.color-green {
+      .result-text {
+        color: #009431;
+      }
+    }
+    &.color-red {
+      .result-text {
+        color: #9d0000;
+      }
+    }
+  }
+
+  .result-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 50%;
+    transform: rotate(-15deg);
+    font-weight: 600;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .btn_box {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-around;
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      height: 30px;
+
+      box-sizing: border-box;
+      border-radius: 5px;
+      background-color: #fff2dc;
+      font-family: "Jua";
+      font-weight: bold;
+      font-size: 16px;
+      color: #f87c56;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+}
+/* 반응형 미디어 쿼리 */
+@media (max-width: 750px) {
+  .wrapper {
+    overflow: hidden;
+    .inner {
+      max-width: 375px;
+      width: 100%;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+  }
+  .weather-box {
+    .weather-icon {
+      top: 120px;
+      right: 10px;
+      width: 200px;
+    }
+  }
+}
