@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import rockImg from "../assets/rock.png";
 import scissorsImg from "../assets/scissors.png";
 import paperImg from "../assets/paper.png";
@@ -15,7 +15,7 @@ const GameBox = (props) => {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [imageAnimationIndex.length]);
 
   const getResultClass = () => {
     return props.result === "win"
