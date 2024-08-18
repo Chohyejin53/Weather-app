@@ -47,7 +47,7 @@ function App() {
     }
   };
 
-  const getWeatherByCity = async () => {
+  const getWeatherByCity = useCallback(async () => {
     try {
       let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}f&units=metric`;
       setLoading(true);
@@ -59,7 +59,7 @@ function App() {
       setAPIError(err.message);
       setLoading(false);
     }
-  };
+  }, [city, ApiKey]);
 
   const handleCityChange = (city) => {
     if (city === "current") {
@@ -67,8 +67,6 @@ function App() {
     } else {
       setCity(city);
     }
-
-    console.log(city);
   };
 
   useEffect(() => {
