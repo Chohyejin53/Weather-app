@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import DateBox from "./component/DateBox";
 import WeatherBox from "./component/WeatherBox";
 import WeatherButton from "./component/WeatherButton";
@@ -24,13 +24,13 @@ function App() {
 
   const ApiKey = "2e15688281c47bf5192a44e84a0814d";
 
-  const getCurrentLocation = () => {
+  const getCurrentLocation = useCallback(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = position.coords.latitude;
       const lon = position.coords.longitude;
       getWeatherByCurrentLocation(lat, lon);
     });
-  };
+  }, []);
 
   const getWeatherByCurrentLocation = async (lat, lon) => {
     try {
@@ -79,7 +79,7 @@ function App() {
       setLoading(true);
       getWeatherByCity();
     }
-  }, [city]);
+  }, [getCurrentLocation, getWeatherByCity, city]);
 
   return (
     <>
